@@ -1,0 +1,24 @@
+# Auto-normalize line endings for cross-platform consistency
+* text=auto eol=lf
+
+# Treat specific file types
+*.cs text diff=csharp
+*.ts text diff=typescript
+*.tsx text diff=typescript
+*.json text
+*.css text
+*.html text
+*.md text
+*.yml text
+*.yaml text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
