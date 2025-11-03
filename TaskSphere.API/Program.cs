@@ -4,6 +4,10 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
 using TaskSphere.API.Data;
+using TaskSphere.API.Repositories;
+using TaskSphere.API.Repositories.Interfaces;
+using TaskSphere.API.Services;
+using TaskSphere.API.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -80,6 +84,11 @@ builder.Services.AddSwaggerGen(c =>
 
 // Controllers
 builder.Services.AddControllers();
+
+// Dependency Injection
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 var app = builder.Build();
 
