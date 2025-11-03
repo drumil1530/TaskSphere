@@ -22,7 +22,7 @@ namespace TaskSphere.API.Data.Configurations
 
       builder
         .Property(t => t.CreatedAt)
-        .HasDefaultValue(DateTime.UtcNow);
+        .HasDefaultValueSql("GETDATE()");
 
       builder
         .Property(t => t.Title)

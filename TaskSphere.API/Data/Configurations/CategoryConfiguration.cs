@@ -12,7 +12,7 @@ namespace TaskSphere.API.Data.Configurations
         .HasOne(c => c.User)
         .WithMany()
         .HasForeignKey(c => c.UserId)
-        .OnDelete(DeleteBehavior.Cascade);
+        .OnDelete(DeleteBehavior.Restrict);
 
       builder
         .Property(c => c.Name)
