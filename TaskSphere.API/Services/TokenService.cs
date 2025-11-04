@@ -25,9 +25,9 @@ namespace TaskSphere.API.Services
 
       // 2. Define claims
       List<Claim> claims = [
-        new(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-        new(JwtRegisteredClaimNames.UniqueName, user.Username),
-        new(JwtRegisteredClaimNames.Email, user.Email),
+        new(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new(ClaimTypes.Name, user.Username),
+        new(ClaimTypes.Email, user.Email),
         new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
       ];
 
